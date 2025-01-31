@@ -155,7 +155,10 @@ export default function ShortenUrl() {
                         className="h-full w-full object-cover"
                       />
                     ) : (
-                      <img src="https://static.wikia.nocookie.net/mario/images/9/99/Mystery_Box_Art_-_Super_Mario_3D_Land.png"></img>
+                      <img
+                        className="animate-bounce"
+                        src="https://static.wikia.nocookie.net/mario/images/9/99/Mystery_Box_Art_-_Super_Mario_3D_Land.png"
+                      ></img>
                     )}
                   </div>
                 </div>
