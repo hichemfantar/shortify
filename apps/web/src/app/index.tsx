@@ -77,9 +77,9 @@ export default function ShortenUrl() {
         <div className="w-full max-w-sm md:max-w-3xl">
           <div className={cn("flex flex-col gap-6")}>
             <Card className="overflow-hidden">
-              <CardContent className="grid p-0 md:grid-cols-2">
+              <CardContent className="grid p-6 md:p-8 md:grid-cols-2 gap-y-2 md:gap-8">
                 {import.meta.env.PROD && (
-                  <div className="md:col-span-full p-6 md:p-8">
+                  <div className="md:col-span-full">
                     <Alert className="">
                       <InfoIcon className="h-4 w-4" />
                       <AlertTitle>Serverless Cold Start</AlertTitle>
@@ -91,7 +91,7 @@ export default function ShortenUrl() {
                     </Alert>
                   </div>
                 )}
-                <form onSubmit={handleSubmit} className="p-6 md:p-8">
+                <form onSubmit={handleSubmit} className="">
                   <div className="flex flex-col gap-6">
                     <div className="flex flex-col">
                       <h1 className="text-2xl font-bold">Shortify</h1>
@@ -172,7 +172,7 @@ export default function ShortenUrl() {
                   </div>
                 </form>
                 <div className="hidden bg-muted md:block">
-                  <div className="mx-auto h-full w-full bg-white p-20 dark:invert aspect-square flex justify-center items-center">
+                  <div className="mx-auto h-full w-full bg-white dark:invert flex justify-center items-center">
                     {shortenMutation.data ? (
                       <QRCodeSVG
                         value={shortenMutation.data}
@@ -181,13 +181,13 @@ export default function ShortenUrl() {
                       />
                     ) : (
                       <img
-                        className="animate-bounce"
+                        className="animate-bounce object-contain"
                         src="https://static.wikia.nocookie.net/mario/images/9/99/Mystery_Box_Art_-_Super_Mario_3D_Land.png"
                       ></img>
                     )}
                   </div>
                 </div>
-                <div className="hidden md:block col-span-full p-6 md:p-8">
+                <div className="hidden md:block col-span-full">
                   <List urls={urlsQuery.data || []} />
                 </div>
               </CardContent>
