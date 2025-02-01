@@ -34,7 +34,7 @@ Generates a **shortened URL** from a given long URL.
 
 #### 🔹 **Headers**
 
-```json
+```
 Content-Type: application/json
 ```
 
