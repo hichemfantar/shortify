@@ -16,7 +16,7 @@ curl -X POST "http://localhost:3000/shorten" \
 curl -L "http://localhost:3000/abc123"
 ```
 
-## **Base URL**  
+## **Base URL**
 
 ```
 http://localhost:3000
@@ -26,7 +26,7 @@ http://localhost:3000
 
 ## **1️⃣ Shorten a URL**
 
-### **POST `/shorten`**  
+### **POST `/shorten`**
 
 Generates a **shortened URL** from a given long URL.
 
@@ -68,7 +68,7 @@ Content-Type: application/json
 
 ## **2️⃣ Redirect to Original URL**
 
-### **GET `/{shortId}`**  
+### **GET `/{shortId}`**
 
 Redirects the user to the **original URL** associated with the short ID.
 
@@ -78,7 +78,7 @@ Redirects the user to the **original URL** associated with the short ID.
 
 | Parameter | Type   | Required | Description           |
 | --------- | ------ | -------- | --------------------- |
-| `shortId` | String | ✅ Yes    | The shortened URL ID. |
+| `shortId` | String | ✅ Yes   | The shortened URL ID. |
 
 #### 🔹 **Example Request**
 

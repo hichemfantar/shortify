@@ -88,7 +88,7 @@ export const createServer = (): Express => {
         if (!entry) return res.status(404).json({ error: "Not found" });
 
         res.redirect(entry.longUrl);
-      }
+      },
     );
   return app;
 };

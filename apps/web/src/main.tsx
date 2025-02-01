@@ -16,7 +16,7 @@ if (el) {
         <App />
         <Toaster />
       </QueryClientProvider>
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 } else {
   throw new Error("Could not find root element");

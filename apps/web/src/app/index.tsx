@@ -128,7 +128,7 @@ export default function ShortenUrl() {
                           onClick={async () => {
                             try {
                               await navigator.clipboard.writeText(
-                                shortenMutation.data
+                                shortenMutation.data,
                               );
                               toast({
                                 title: "Copied to clipboard",
