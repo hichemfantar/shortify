@@ -64,6 +64,12 @@ Content-Type: application/json
 }
 ```
 
+#### ❌ **429 Too Many Requests**
+
+```
+Too many requests, please try again later.
+```
+
 ---
 
 ## **2️⃣ Redirect to Original URL**
@@ -78,7 +84,7 @@ Redirects the user to the **original URL** associated with the short ID.
 
 | Parameter | Type   | Required | Description           |
 | --------- | ------ | -------- | --------------------- |
-| `shortId` | String | ✅ Yes   | The shortened URL ID. |
+| `shortId` | String | ✅ Yes    | The shortened URL ID. |
 
 #### 🔹 **Example Request**
 
