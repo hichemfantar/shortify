@@ -1,16 +1,8 @@
-import { useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-import { useWindowSize } from "react-use";
-import ReactConfetti from "react-confetti";
-import { QRCodeSVG } from "qrcode.react";
-import { cn } from "@/lib/utils";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Copy } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import {
   Table,
   TableBody,
@@ -21,6 +13,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
+import { Copy, InfoIcon } from "lucide-react";
+import { QRCodeSVG } from "qrcode.react";
+import { useState } from "react";
+import ReactConfetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -77,6 +78,19 @@ export default function ShortenUrl() {
           <div className={cn("flex flex-col gap-6")}>
             <Card className="overflow-hidden">
               <CardContent className="grid p-0 md:grid-cols-2">
+                {import.meta.env.PROD && (
+                  <div className="md:col-span-full p-6 md:p-8">
+                    <Alert className="">
+                      <InfoIcon className="h-4 w-4" />
+                      <AlertTitle>Serverless Cold Start</AlertTitle>
+                      <AlertDescription>
+                        The first request may take longer due to a cold start,
+                        as the serverless function needs to initialize after
+                        being idle.
+                      </AlertDescription>
+                    </Alert>
+                  </div>
+                )}
                 <form onSubmit={handleSubmit} className="p-6 md:p-8">
                   <div className="flex flex-col gap-6">
                     <div className="flex flex-col">
