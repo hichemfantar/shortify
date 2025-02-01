@@ -107,7 +107,7 @@ export default function ShortenUrl() {
                         : "Shorten URL"}
                     </Button>
                     {shortenMutation.data && (
-                      <div className="flex items-end">
+                      <div className="flex items-center gap-4">
                         <div className="flex-1 grid gap-2">
                           <div className="flex items-center">
                             <Label htmlFor="shortened_url">Shortened URL</Label>
@@ -123,7 +123,7 @@ export default function ShortenUrl() {
                         </div>
                         <Button
                           type="button"
-                          variant={"outline"}
+                          variant={"ghost"}
                           size={"icon"}
                           onClick={async () => {
                             try {
