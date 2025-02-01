@@ -4,6 +4,7 @@ import morgan from "morgan";
 import cors from "cors";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
+import rateLimit from "express-rate-limit";
 
 const { json, urlencoded } = bp;
 const prisma = new PrismaClient();
@@ -24,6 +25,13 @@ interface ShortenRequest extends Request {
   };
 }
 
+const limiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  limit: 100,
+  standardHeaders: "draft-8",
+  legacyHeaders: false,
+});
+
 export const createServer = (): Express => {
   const app = express();
   app
@@ -32,10 +40,10 @@ export const createServer = (): Express => {
     .use(urlencoded({ extended: true }))
     .use(json())
     .use(cors())
+    .use(limiter)
     .post("/shorten", async (req: ShortenRequest, res) => {
       const { longUrl } = req.body;
       if (!longUrl) return res.status(400).json({ error: "URL is required" });
-
       const UrlSchema = z.string().url();
       try {
         const parsedUrl = UrlSchema.parse(longUrl);
