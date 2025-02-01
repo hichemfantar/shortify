@@ -27,7 +27,7 @@ interface ShortenRequest extends Request {
 
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000,
-  limit: 100,
+  limit: 60,
   standardHeaders: "draft-8",
   legacyHeaders: false,
 });
