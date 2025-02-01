@@ -251,10 +251,6 @@ function List({ urls }: { urls: UrlSchema[] }) {
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">{urls.length}</TableCell>
-        </TableRow>
-        <TableRow>
           <TableCell colSpan={3}>Display limit</TableCell>
           <TableCell className="text-right">10</TableCell>
         </TableRow>
