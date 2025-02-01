@@ -172,7 +172,7 @@ export default function ShortenUrl() {
                   </div>
                 </form>
                 <div className="hidden bg-muted md:block">
-                  <div className="mx-auto h-full w-full bg-white dark:invert flex justify-center items-center">
+                  <div className="p-10 mx-auto h-full w-full bg-white dark:invert flex justify-center items-center">
                     {shortenMutation.data ? (
                       <QRCodeSVG
                         value={shortenMutation.data}
