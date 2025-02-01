@@ -73,6 +73,7 @@ export const createServer = (): Express => {
       try {
         const urls = await prisma.shortURL.findMany({
           orderBy: { createdAt: "desc" },
+          take: 10,
         });
         const enrichedUrls = urls.map((url) => ({
           ...url,
