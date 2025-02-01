@@ -162,7 +162,7 @@ export default function ShortenUrl() {
                     )}
                   </div>
                 </div>
-                <div className="col-span-full p-6 md:p-8">
+                <div className="hidden md:block col-span-full p-6 md:p-8">
                   <List urls={urlsQuery.data || []} />
                 </div>
               </CardContent>
