@@ -17,7 +17,7 @@ import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { Copy, InfoIcon } from "lucide-react";
+import { Copy, GithubIcon, InfoIcon } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { useState } from "react";
 import ReactConfetti from "react-confetti";
@@ -158,6 +158,17 @@ export default function ShortenUrl() {
                         </Button>
                       </div>
                     )}
+                    <div className="grid">
+                      <Button asChild variant="outline" className="">
+                        <a
+                          href="https://github.com/hichemfantar/shortify"
+                          target="_blank"
+                        >
+                          <GithubIcon />
+                          <span>Open on GitHub</span>
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </form>
                 <div className="hidden bg-muted md:block">
