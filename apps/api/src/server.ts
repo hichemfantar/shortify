@@ -40,7 +40,8 @@ export const createServer = (): Express => {
     .use(urlencoded({ extended: true }))
     .use(json())
     .use(cors())
-    .use(limiter)
+    // disabling rate limiter for now
+    // .use(limiter)
     .post("/shorten", async (req: ShortenRequest, res) => {
       const { longUrl } = req.body;
       if (!longUrl) return res.status(400).json({ error: "URL is required" });
